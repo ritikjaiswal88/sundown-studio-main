@@ -392,6 +392,8 @@
   display: none;
 }
 
+
+/* PAGE 4  section*/
 #page4{
   height: 160vh;
   width: 100%;
@@ -400,7 +402,7 @@
   position: relative;
 }
 
-#page4-part1 h3{
+#page4-part1 h3 {
   font-size: 18px;
   font-weight: 400;
   border: 1px solid rgba(0, 0, 0, 0.374);
@@ -409,41 +411,45 @@
   position: relative;
   color: #000000;
   overflow: hidden;
-  width: 11%;
+  display: inline-block;
 }
-#page4-part1 h3 a{
+
+#page4-part1 h3 a {
   color: black;
   text-decoration: none;
-  
-  z-index: 10;
-  
-  
+  position: relative;
+  z-index: 10; /* Ensures link stays above ::after */
 }
 #page4-part1 h3 a i{
   color: black;
   text-decoration: none;
- 
-  z-index: 10;
+  position: relative;
+  z-index: 10; /* Ensures link stays above ::after */
 }
 
-#page4-part1 h3::after{
+#page4-part1 h3::after {
   content: "";
   position: absolute;
   height: 100%;
   width: 100%;
   background-color: black;
   left: 0;
-  bottom: -100%;
-  
-}
-#page4-part1 h3:hover::after{
-  top: 0%;
-  transition: all ease 0.25s;
+  top: 100%; /* Initial position */
+  transition: all ease 0.25s; /* Smooth transition */
+  z-index: 1;
 }
 
-#page4-part1 h3 :hover{
-  color: white;
+#page4-part1 h3:hover::after {
+  top: 0; /* Moves pseudo-element up */
 }
+
+#page4-part1 h3:hover a {
+  color: white; /* Changes link color when h3 is hovered */
+}
+#page4-part1 h3:hover a i{
+  color: white; /* Changes link color when h3 is hovered */
+}
+
 
 #page4-part2{
   display: flex;
@@ -735,7 +741,6 @@ nav h3{
         border-radius: 50px;
         font-size: 4vw;
         font-weight: 200;
-        padding-left: 10vw;
    }
  
  

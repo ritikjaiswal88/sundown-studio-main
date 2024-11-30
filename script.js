@@ -63,6 +63,7 @@ var elems = document.querySelectorAll(".elem")
             flag = 0
         }
     })
+    
 }
 
 function loaderAnimation() {
